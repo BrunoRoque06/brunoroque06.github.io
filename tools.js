@@ -48,14 +48,6 @@ async function buildFavicons() {
     .resize(192)
     .png()
     .toFile(imgs + "/favicon-192.png");
-
-  for (const s of [180, 192, 512]) {
-    await svg
-      .resize(s)
-      .flatten({ background: { r: 255, g: 255, b: 255 } })
-      .png()
-      .toFile(imgs + "/favicon-" + s + "-bg.png");
-  }
 }
 
 function pass() {

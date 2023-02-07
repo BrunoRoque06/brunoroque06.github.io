@@ -22,8 +22,6 @@ module.exports = function(config) {
 
   config.addPassthroughCopy("docs");
   config.addPassthroughCopy("imgs");
-  config.addPassthroughCopy("manifest.json");
-  config.addPassthroughCopy("service-worker.js");
 
   config.addPassthroughCopy(tools.pass());
 

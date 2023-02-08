@@ -4,17 +4,23 @@ $font-family-mono: JetBrains Mono, monospace;
 $color-background: #f2dfce;
 $color-main: #286983;
 $font-color-main: black;
-$border: 1rem;
 
 body {
   font-family: $font-family-regular;
-  background: $color-background;
   color: $font-color-main;
-  border: $border solid $color-main;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 
   header {
-    height: calc(100vh - 2 * $border);
+    background: $color-background;
+    border: 0.5rem solid $color-main;
+    padding: 2rem 4rem;
+    width: fit-content;
+
     display: flex;
     flex-direction: column;
     align-items: center;

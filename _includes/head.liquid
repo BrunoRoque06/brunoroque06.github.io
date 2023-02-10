@@ -12,5 +12,5 @@
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Rubik:wght@600&display=swap');
   </style>
   {% capture style %}{% render "style.scss" %}{% endcapture %}
-  <style type="text/css">{{ style | scss2css }}</style>
+  <style>{{ style | scss2css }}</style>
 </head>

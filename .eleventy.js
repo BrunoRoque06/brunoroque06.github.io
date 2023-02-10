@@ -27,5 +27,7 @@ module.exports = function (cfg) {
 
   cfg.addPassthroughCopy(tools.pass());
 
+  cfg.ignores.add("README.md");
+
   return {};
 };

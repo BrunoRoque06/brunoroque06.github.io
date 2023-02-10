@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "build": "eleventy",
-    "deploy": "rm -rf _site dist && npm run build && gh-pages --dist _site --no-history",
-    "start": "eleventy --serve"
+    "build": "npm run clean && eleventy",
+    "deploy": "npm run build && gh-pages --dist _site --no-history",
+    "clean": "rm -rf _site dist",
+    "start": "npm run clean && eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "2.0.0",

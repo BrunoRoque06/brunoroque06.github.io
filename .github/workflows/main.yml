@@ -11,17 +11,6 @@ jobs:
       - run: npx prettier -l '**/*.{json,md,yaml,yml}'
       - run: npm run build
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: npm ci
-      - run: |
-          git config --global user.email 'brunoroque06@github.com'
-          git config --global user.name 'brunoroque06'
-          npm run deploy
-
   audit:
     runs-on: ubuntu-latest
     steps:

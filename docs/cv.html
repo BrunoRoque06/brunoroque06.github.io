@@ -88,7 +88,7 @@
       .main-sub-date {
         font-family: var(--font-mono);
         font-weight: 500;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
       }
 
       .main-content {
@@ -191,11 +191,15 @@
 
       let info = document.getElementById("info");
       infos.forEach((i) => {
-        let iconText = `<span class="info-icon">${i.icon}</span><span class="info-text">${i.value}</span>`;
+        let icon = `
+          <span class="info-icon">${i.icon}</span>
+          <span class="info-text">${i.value}</span>
+        `;
+
         let wrap =
           i.ref === undefined
-            ? iconText
-            : `<a href="${i.ref}" target="_blank" rel="noopener noreferrer">${iconText}</a>`;
+            ? icon
+            : `<a href="${i.ref}" target="_blank" rel="noopener noreferrer">${icon}</a>`;
 
         info.insertAdjacentHTML(
           "beforeend",
@@ -206,9 +210,10 @@
       let techs = [
         "C#",
         "Python",
-        "Go",
+        // "Go",
         "PostgreSQL",
         "Angular",
+        "Shell",
         "Bazel",
         "Docker",
         "Azure DevOps",
@@ -224,18 +229,20 @@
       });
 
       let exps = [
-        // {
-        //   start: "01.2015",
-        //   end: "09.2015",
-        //   loc: "Instituto Telecomunicações, Lisbon, Portugal",
-        //   title: "Software Engineer R&D",
-        //   des: "Software development of video processing algorithms: detection of black frames, black margins, flashes, block effect, removal of subtitles and inpaint. Technologies: C++, OpenCV, Matlab.",
-        // },
+        {
+          start: "01.2015",
+          end: "09.2015",
+          comp: "Instituto Telecomunicações",
+          loc: "Lisbon, Portugal",
+          title: "Software Engineer R&D",
+          des: "Software development of video processing algorithms: detection of black frames, black margins, flashes, block effect, removal of subtitles and inpaint. Technologies: C++, OpenCV, Matlab.",
+        },
         {
           start: "10.2015",
           end: "03.2017",
           dur: "1 yr 6 mos",
-          loc: "Celfinet, Lisbon, Portugal",
+          comp: "Celfinet",
+          loc: "Lisbon, Portugal",
           title: "Software Engineer R&D",
           des: "Research of geolocation in mobile and IoT networks using radio frequency propagation models. Improved the geolocation error from 280 meter to 130 meter. Technologies: C#.",
         },
@@ -243,7 +250,8 @@
           start: "04.2017",
           end: "08.2017",
           dur: "5 mos",
-          loc: "Vodafone (Celfinet), Glasgow, Scotland",
+          comp: "Vodafone (Celfinet)",
+          loc: "Glasgow, Scotland",
           title: "Software Engineer",
           des: "Development of a desktop application to automate the planning of neighbors in cellular networks. Improved the drop call rate in northern areas of the UK by 30%. Technologies: C#, WPF, Microsoft SQL Server.",
         },
@@ -251,7 +259,8 @@
           start: "11.2017",
           end: "05.2019",
           dur: "1 yr 7 mos",
-          loc: "Spoud AG, Bern, Switzerland",
+          comp: "Spoud AG",
+          loc: "Bern, Switzerland",
           title: "Software Developer",
           des: "Development of a real-time transport layer, and of analytics pipelines, where I introduced testing. Technologies: Java, Apache Flink, Apache Kafka, Elasticsearch, gRPC, Bazel, Docker.",
         },
@@ -259,24 +268,35 @@
           start: "06.2019",
           end: "12.2022",
           dur: "3 yrs 7 mos",
-          loc: "Raccoon Works, Zürich, Switzerland",
+          comp: "Raccoon Works",
+          loc: "Zürich, Switzerland",
           title: "Senior Software Developer",
           des: "Development of an analytics system for time-series data. It enabled correlation of events across components in production lines. Technologies: C#, Python, PostgreSQL, Angular, Bazel, Azure DevOps, Docker, Azure (IaC).",
+        },
+        {
+          start: "03.2023",
+          end: "Present",
+          dur: undefined,
+          comp: "Axpo",
+          loc: "Baden, Switzerland",
+          title: "Senior Full Stack Engineer",
+          des: "...",
         },
       ];
 
       let exp = document.getElementById("exp");
-      exps.forEach((e) => {
+      exps.slice(exps.length - 4, exps.length).forEach((e) => {
+        let dur = e.dur === undefined ? "" : `(${e.dur}) `;
         exp.insertAdjacentHTML(
           "afterend",
           `<div class="row">
              <div class="main-title">${e.title}</div>
-              <div class="main-sub">
-                <span>${e.loc}</span>
-                <span class="main-sub-date">(${e.dur}) ${e.start} - ${e.end}</span>
-              </div>
-              <div class="main-content">${e.des}</div>
-            </div>
+             <div class="main-sub">
+               <span>${e.comp} - ${e.loc}</span>
+               <span class="main-sub-date">${dur}${e.start} - ${e.end}</span>
+             </div>
+             <div class="main-content">${e.des}</div>
+           </div>
             `
         );
       });

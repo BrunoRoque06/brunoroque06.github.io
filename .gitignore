@@ -1,4 +1,11 @@
+.DS_Store
+.angular
+.idea
 .lighthouseci
-_site
+.vscode
 dist
 node_modules
+
+src/assets/docs/bruno-roque-cover.pdf
+src/assets/docs/bruno-roque-cv.pdf
+src/assets/imgs/favicon-192.png

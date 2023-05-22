@@ -3,21 +3,17 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      .small {
-        font-size: 0.9rem;
-      }
-
       .row {
-        margin: 0.5rem 0;
+        margin: 0.4rem 0;
       }
 
       .section {
+        border-bottom: 1.5pt black solid;
         font-family: var(--font-mono);
+        font-size: 1.2rem;
         font-weight: 500;
-        border-bottom: 2pt black solid;
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        margin: 0.5rem 0;
+        /* text-transform: uppercase; */
+        margin: 0.4rem 0;
       }
 
       #info {
@@ -56,44 +52,24 @@
         height: 1.1em;
       }
 
-      #techs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 0.5rem;
-        row-gap: 0.4rem;
-      }
-
-      .tech {
-        background-color: black;
-        border: 0.1rem black solid;
-        border-radius: 0.6rem;
-        color: white;
-        padding: 0.2rem;
-      }
-
       .main-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
-        margin: 0.4rem 0;
+        margin: 0.1rem 0;
       }
 
       .main-sub {
-        font-size: 0.9rem;
-        margin: 0.2rem 0;
         display: flex;
         justify-content: space-between;
       }
 
       .main-sub-date {
         font-family: var(--font-mono);
-        font-weight: 500;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
 
       .main-content {
-        font-size: 0.9rem;
-        margin: 0.4rem 0;
+        margin: 0.1rem 0;
         text-align: justify;
       }
 
@@ -104,6 +80,21 @@
 
       .footer-entry {
         width: 50%;
+      }
+
+      #techs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 0.5rem;
+        row-gap: 0.4rem;
+      }
+
+      .tech {
+        background-color: black;
+        border-radius: 0.5rem;
+        color: white;
+        padding: 0.2rem;
       }
     </style>
   </head>
@@ -144,9 +135,9 @@
       <div class="footer" style="margin-top: 0.5rem">
         <div class="footer-entry">
           <div class="section" style="margin-top: 0">Languages</div>
-          <div class="row small">English - Proficient (C)</div>
-          <div class="row small">German - Intermediate (B)</div>
-          <div class="row small">Portuguese - Native</div>
+          <div class="row">English - Proficient (C)</div>
+          <div class="row">German - Intermediate (B)</div>
+          <div class="row">Portuguese - Native</div>
         </div>
 
         <div class="footer-entry">
@@ -203,14 +194,13 @@
 
         info.insertAdjacentHTML(
           "beforeend",
-          `<div class="info-entry small">${wrap}</div>`
+          `<div class="info-entry">${wrap}</div>`
         );
       });
 
       let techs = [
         "C#",
         "Python",
-        // "Go",
         "PostgreSQL",
         "Angular",
         "Shell",
@@ -222,10 +212,7 @@
 
       let tech = document.getElementById("techs");
       techs.forEach((t) => {
-        tech.insertAdjacentHTML(
-          "beforeend",
-          `<span class="small tech">${t}</span>`
-        );
+        tech.insertAdjacentHTML("beforeend", `<span class="tech">${t}</span>`);
       });
 
       let exps = [
@@ -320,7 +307,7 @@
         {
           ref: "https://github.com/brunoroque06/plays/tree/main/genetic",
           date: "Present",
-          des: "Genetic Algorithm, Decision Tree Player, Dijkstra, and other side projects on GitHub.",
+          des: "Genetic Algorithm, Decision Tree Player, and other side projects on GitHub.",
         },
       ];
 

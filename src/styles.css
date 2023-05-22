@@ -1,0 +1,74 @@
+:root {
+  --font-family-regular: "Rambla", sans-serif;
+  --font-family-mono: "M Plus 1 Code", monospace;
+  --color-background: #f2dfce;
+  --color-main: #286983;
+  --font-color-main: black;
+}
+
+body {
+  font-family: var(--font-family-regular);
+  color: var(--font-color-main);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+header {
+  background: var(--color-background);
+  border: 0.5rem solid var(--color-main);
+  padding: 2rem 4rem;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.caret {
+  color: var(--color-main);
+  background: var(--color-main);
+  display: inline-block;
+  line-height: 1em;
+  margin-left: 0.2rem;
+  padding: 0 0.01em;
+}
+
+.title {
+  font-family: var(--font-family-mono);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.link {
+  fill: var(--font-color-main);
+  height: 1.6rem;
+}
+
+.link:hover {
+  fill: var(--color-main);
+}
+
+@media only screen and (max-width: 17em) {
+  body {
+    word-break: break-all;
+  }
+}

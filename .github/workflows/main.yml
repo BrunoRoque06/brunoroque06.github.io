@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npx prettier -l '**/*.{json,md,yaml,yml}'
+      - run: npm run format:check
       - run: npm run build
 
   audit:

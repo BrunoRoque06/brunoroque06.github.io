@@ -1,18 +1,37 @@
 {
+  "name": "brunoroque06",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
     "audit": "lhci autorun",
-    "build": "npm run clean && eleventy",
-    "clean": "rm -rf _site dist",
-    "deploy": "npm run build && gh-pages --dist _site --no-history",
-    "start": "npm run clean && eleventy --serve"
+    "build": "npm run pre && ng build",
+    "deploy": "npm run build && gh-pages --dist dist/brunoroque06 --no-history",
+    "format": "prettier -w .",
+    "format:check": "prettier -l '**/*.{js,json,md,ts,yml}'",
+    "pre": "node tools/main.js",
+    "pre:watch": "nodemon --ext . --watch tools tools/main.js",
+    "start": "npm run pre && ng serve",
+    "watch": "npm run pre && ng build --watch --configuration development"
+  },
+  "dependencies": {
+    "@angular/common": "16.0.2",
+    "@angular/compiler": "16.0.2",
+    "@angular/core": "16.0.2",
+    "@angular/platform-browser": "16.0.2",
+    "rxjs": "7.8.1",
+    "tslib": "2.5.2",
+    "zone.js": "0.13.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0",
-    "@lhci/cli": "0.11.0",
+    "@angular-devkit/build-angular": "16.0.2",
+    "@angular/cli": "16.0.2",
+    "@angular/compiler-cli": "16.0.2",
+    "@lhci/cli": "0.12.0",
     "gh-pages": "5.0.0",
-    "prettier": "2.8.7",
-    "puppeteer": "19.8.0",
-    "sass": "1.60.0",
-    "sharp": "0.32.0"
+    "nodemon": "2.0.22",
+    "prettier": "2.8.8",
+    "puppeteer": "20.3.0",
+    "sharp": "0.32.1",
+    "typescript": "5.0.4"
   }
 }

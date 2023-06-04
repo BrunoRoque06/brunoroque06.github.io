@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500&family=Rambla:wght@700&display=swap");
-
 :root {
-  --font-family-regular: "Rambla", sans-serif;
-  --font-family-mono: "M Plus 1 Code", monospace;
   --color-background: #f2dfce;
   --color-main: #286983;
   --font-color-main: black;
+  --font-family-mono: monospace;
+  --font-family-regular: sans-serif;
 }
 
 body {
@@ -34,7 +32,7 @@ header {
 
 .name {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .caret {
@@ -49,7 +47,7 @@ header {
 .title {
   font-family: var(--font-family-mono);
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .links {
@@ -62,7 +60,7 @@ header {
 
 .link {
   fill: var(--font-color-main);
-  height: 1.6rem;
+  height: 1.8rem;
 }
 
 .link:hover {

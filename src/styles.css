@@ -1,70 +1,54 @@
 :root {
-  --color-background: #f2dfce;
   --color-main: #286983;
-  --font-color-main: black;
-  --font-family-mono: monospace;
-  --font-family-regular: sans-serif;
 }
 
 body {
-  font-family: var(--font-family-regular);
-  color: var(--font-color-main);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  margin: 0 auto;
+  max-width: 50rem;
 }
 
 header {
-  background: var(--color-background);
-  border: 0.5rem solid var(--color-main);
-  padding: 2rem 4rem;
-  width: fit-content;
-
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  justify-content: right;
+  gap: 2rem;
+
+  margin: 4rem 0;
+
+  font-family: sans-serif;
+  font-size: 1.2rem;
 }
 
-.name {
+a {
+  color: black;
+  text-decoration: none;
+  padding: 0.4rem;
+}
+
+a:hover {
+  color: white;
+  background-color: var(--color-main);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin: 10rem 0;
+
+  font-family: monospace;
   font-size: 2rem;
-  font-weight: 600;
 }
 
 .caret {
-  color: var(--color-main);
   background: var(--color-main);
-  display: inline-block;
-  line-height: 1em;
-  margin-left: 0.2rem;
-  padding: 0 0.01em;
 }
 
 .title {
-  font-family: var(--font-family-mono);
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.links {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.link {
-  fill: var(--font-color-main);
-  height: 1.8rem;
-}
-
-.link:hover {
-  fill: var(--color-main);
+  color: var(--color-main);
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 17em) {

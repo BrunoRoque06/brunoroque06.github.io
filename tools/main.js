@@ -5,6 +5,11 @@ let sharp = require("sharp");
 const docs = "src/assets/docs";
 const imgs = "src/assets/imgs";
 
+/**
+ * @param {string} src
+ * @param {string} dest
+ * @returns {Promise<void>}
+ */
 async function buildPdf(src, dest) {
   let browser = await pup.launch({ headless: "new" });
   let page = await browser.newPage();
@@ -20,9 +25,11 @@ async function buildPdf(src, dest) {
   await browser.close();
 }
 
+/**
+ * @returns {Promise<void>}
+ */
 async function buildFavicons() {
   let svg = sharp("tools/logo.svg");
-
   await svg.resize(192).png().toFile(`${imgs}/favicon-192.png`);
 }
 

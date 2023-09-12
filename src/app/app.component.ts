@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
-import { concatMap, delay, from, of } from "rxjs";
 import { AsyncPipe, NgForOf } from "@angular/common";
+import { Component } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { concatMap, delay, from, of } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -9,7 +10,7 @@ import { AsyncPipe, NgForOf } from "@angular/common";
   template: `
     <header>
       <div>
-        <span>{{ name | async }}</span>
+        <span>{{ name() }}</span>
         <span class="caret">&nbsp;</span>
       </div>
       <div class="title">Software Engineer</div>
@@ -26,12 +27,14 @@ import { AsyncPipe, NgForOf } from "@angular/common";
   `,
 })
 export class AppComponent {
-  name = of("Bruno Roque").pipe(
-    delay(1000),
-    concatMap((n) =>
-      from([...Array(n.length + 1).keys()].map((i) => n.substring(0, i))),
+  name = toSignal(
+    of("Bruno Roque").pipe(
+      delay(1000),
+      concatMap((n) =>
+        from([...Array(n.length + 1).keys()].map((i) => n.substring(0, i))),
+      ),
+      concatMap((n) => of(n).pipe(delay(100))),
     ),
-    concatMap((n) => of(n).pipe(delay(100))),
   );
 
   links = [

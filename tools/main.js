@@ -1,5 +1,5 @@
 let fs = require("fs");
-let pup = require("puppeteer");
+let playwright = require("playwright");
 let sharp = require("sharp");
 
 const docs = "src/assets/docs";
@@ -11,17 +11,12 @@ const imgs = "src/assets/imgs";
  * @returns {Promise<void>}
  */
 async function buildPdf(src, dest) {
-  let browser = await pup.launch({ headless: "new" });
+  let browser = await playwright.chromium.launch();
   let page = await browser.newPage();
   let html = fs.readFileSync(`tools/${src}`, "utf8");
   await page.setContent(html, { waitUntil: "domcontentloaded" });
   await page.addStyleTag({ path: "tools/style.css" });
-
-  await page.pdf({
-    format: "A4",
-    path: `${docs}/${dest}`,
-    printBackground: true,
-  });
+  await page.pdf({ format: "A4", path: `${docs}/${dest}` });
   await browser.close();
 }
 

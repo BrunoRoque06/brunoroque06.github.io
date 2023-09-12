@@ -14,23 +14,23 @@
     "watch": "npm run pre && ng build --watch --configuration development"
   },
   "dependencies": {
-    "@angular/common": "16.2.0",
-    "@angular/compiler": "16.2.0",
-    "@angular/core": "16.2.0",
-    "@angular/platform-browser": "16.2.0",
+    "@angular/common": "16.2.1",
+    "@angular/compiler": "16.2.1",
+    "@angular/core": "16.2.1",
+    "@angular/platform-browser": "16.2.1",
     "rxjs": "7.8.1",
-    "tslib": "2.6.1",
-    "zone.js": "0.13.1"
+    "tslib": "2.6.2",
+    "zone.js": "0.13.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "16.2.0",
-    "@angular/cli": "16.2.0",
-    "@angular/compiler-cli": "16.2.0",
+    "@angular-devkit/build-angular": "16.2.1",
+    "@angular/cli": "16.2.1",
+    "@angular/compiler-cli": "16.2.1",
     "@lhci/cli": "0.12.0",
     "gh-pages": "6.0.0",
     "nodemon": "3.0.1",
-    "prettier": "3.0.2",
-    "puppeteer": "21.0.3",
+    "playwright": "1.37.1",
+    "prettier": "3.0.3",
     "sharp": "0.32.5",
     "typescript": "5.1.6"
   }

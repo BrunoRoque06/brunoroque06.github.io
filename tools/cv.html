@@ -272,7 +272,7 @@
       ];
 
       let exp = document.getElementById("exp");
-      exps.slice(exps.length - 4, exps.length).forEach((e) => {
+      exps.slice(-4).forEach((e) => {
         let dur = e.dur === undefined ? "" : `(${e.dur}) `;
         exp.insertAdjacentHTML(
           "afterend",
@@ -300,6 +300,11 @@
           des: "Architect's Master Class, Juval Löwy, IDesign.",
         },
         {
+          ref: "https://www.idesign.net/Clinics/Architecture-Clinic",
+          date: "09.2023",
+          des: "Architecture Clinic, Michael Montgomery, IDesign.",
+        },
+        {
           ref: "https://github.com/brunoroque06/plays/tree/main/reportus",
           date: "Present",
           des: "Tool to help my wife fill out reports.",
@@ -312,7 +317,7 @@
       ];
 
       let dev = document.getElementById("devs");
-      devs.forEach((d) => {
+      devs.slice(-4).forEach((d) => {
         dev.insertAdjacentHTML(
           "afterend",
           `<div class="row">

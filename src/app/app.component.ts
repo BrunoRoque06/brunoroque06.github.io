@@ -3,6 +3,10 @@ import { Component } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { concatMap, delay, from, of } from "rxjs";
 
+function type(val: string) {
+  return [...Array(val.length + 1).keys()].map((i) => val.substring(0, i))
+}
+
 @Component({
   selector: "app-root",
   standalone: true,
@@ -31,7 +35,7 @@ export class AppComponent {
     of("Bruno Roque").pipe(
       delay(1000),
       concatMap((n) =>
-        from([...Array(n.length + 1).keys()].map((i) => n.substring(0, i))),
+        from(type(n)),
       ),
       concatMap((n) => of(n).pipe(delay(100))),
     ),

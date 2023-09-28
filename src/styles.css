@@ -8,12 +8,12 @@ body {
   padding: 0 0.5rem;
 }
 
-header {
+.name {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
-  margin: 8rem 0;
+  margin: 6rem 0;
 
   font-family: monospace;
   font-size: 2rem;
@@ -27,12 +27,14 @@ header {
   color: var(--color-main);
 }
 
-main {
+.links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: right;
   gap: 1rem;
+  
+  margin: 4rem 0;
 
   font-family: sans-serif;
   font-size: 1.4rem;

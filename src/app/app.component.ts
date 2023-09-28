@@ -12,22 +12,22 @@ function type(val: string) {
   standalone: true,
   imports: [AsyncPipe, NgForOf],
   template: `
-    <header>
+    <div class="links">
+      <a
+          *ngFor="let l of links"
+          href="{{ l.ref }}"
+          target="_blank"
+          rel="noopener noreferrer"
+      >{{ l.name }}</a
+      >
+    </div>
+    <div class="name">
       <div>
         <span>{{ name() }}</span>
         <span class="caret">&nbsp;</span>
       </div>
       <div class="title">Software Engineer</div>
-    </header>
-    <main>
-      <a
-        *ngFor="let l of links"
-        href="{{ l.ref }}"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ l.name }}</a
-      >
-    </main>
+    </div>
   `,
 })
 export class AppComponent {

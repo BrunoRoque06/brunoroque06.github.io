@@ -14,11 +14,11 @@ function type(val: string) {
   template: `
     <div class="links">
       <a
-          *ngFor="let l of links"
-          href="{{ l.ref }}"
-          target="_blank"
-          rel="noopener noreferrer"
-      >{{ l.name }}</a
+        *ngFor="let l of links"
+        href="{{ l.ref }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ l.name }}</a
       >
     </div>
     <div class="name">

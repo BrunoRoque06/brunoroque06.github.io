@@ -1,3 +1,3 @@
 # Website
 
-Code here: <https://github.com/brunoroque06/plays/tree/main/website>
+<https://brunoroque06.github.io> (code here: <https://github.com/brunoroque06/plays/tree/main/website>)
